@@ -13,7 +13,7 @@ from fastapi.responses import JSONResponse, Response, StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 import socketio
 
-from nlp_engine import TranscriptEntry, summarize_meeting, MeetingSummary
+from .nlp_engine import TranscriptEntry, summarize_meeting, MeetingSummary
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s: %(message)s")
 logger = logging.getLogger("standup")
