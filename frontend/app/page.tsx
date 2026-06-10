@@ -9,7 +9,7 @@ export default function Home() {
   const [error, setError] = useState('')
   const [time, setTime] = useState('')
 
-  const API = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://standup-1-7kga.onrender.com/'
+  const API = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://standup-1-7kga.onrender.com'
 
   useEffect(() => {
     const tick = () => setTime(new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }))
