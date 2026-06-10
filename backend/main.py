@@ -293,7 +293,8 @@ app = FastAPI(title="Standup")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 NEXT_PORT = int(os.environ.get("NEXT_PORT", "3000"))
-NEXT_URL = f"http://localhost:{NEXT_PORT}"
+NEXT_HOST = os.environ.get("NEXT_HOST", "localhost")
+NEXT_URL  = f"http://{NEXT_HOST}:{NEXT_PORT}"
 
 # REST API routes
 @app.post("/api/rooms")
