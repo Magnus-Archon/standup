@@ -117,7 +117,7 @@ export default function MeetPage() {
   useEffect(() => {
     if (phase !== 'meeting') return
 
-    const SOCKET_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:8000'
+    const SOCKET_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://standup-1-7kga.onrender.com/'
     const socket = io(SOCKET_URL, { transports: ['websocket', 'polling'], reconnectionAttempts: 10 })
     socketRef.current = socket
 
