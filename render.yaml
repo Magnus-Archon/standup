@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: standup-frontend
+    runtime: docker
+    dockerfilePath: ./Dockerfile.frontend
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+
+  - type: web
+    name: standup-backend
+    runtime: docker
+    dockerfilePath: ./Dockerfile.backend
+    dockerContext: .
+    plan: free
+    envVars:
+      - key: NEXT_URL
+        fromService:
+          name: standup-frontend
+          type: web
+          property: hostport
